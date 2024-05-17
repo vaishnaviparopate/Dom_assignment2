@@ -69,15 +69,27 @@
 // 	input - night, thing
 // 	output - true
 
-// let s="below"
-// let s2="elbow"
-// function checkIn(){
-//     for(let i=0; i<s.length; i++){
-//         if (s[i]==s2){
-//             return true
-//         }
-//     }
-// }
+let s="below"
+let s2="elbow"
+function checkIn(){
+    let c=0;
+    let l=s.length
+    for(let i=0; i<s.length; i++){
+        for(let j=0; j<s2.length; j++){
+            if (s[i]==s[j]){
+                c=c+1
+            }
+        }
+        
+    }
+    if (c==l){
+        return "true";
+    }
+    else{
+        return "false";
+    }
+}
+console.log(checkIn())
 
 
 
@@ -85,13 +97,13 @@
 // 	input- i am learning javascript.
 // 	output - tpircsavaj gninrael ma i
 
-function reverse(){
-    let s="i am learning javascript"
-    let s1=s.split("").reverse().join("")
-    return s1
-}
-let result=(reverse())
-console.log(result)
+// function reverse(){
+//     let s="i am learning javascript"
+//     let s1=s.split("").reverse().join("")
+//     return s1
+// }
+// let result=(reverse())
+// console.log(result)
 
 // 6. Reveres the given string word by word then return the reversed string.
 // 	input - Success comes to those who work hard
