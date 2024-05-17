@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>capitialize</title>
+</head>
+<body>
+    
+    <div>
+        <h1>Capitialize</h1>
+        <input type="text" placeholder="Enter the sentence" id="input">
+        <button id="btn"> Captialize</button>
+        <button id="reverse"> Reverse</button>
+        <button id="reverseword"> reverseword</button>
+    </div>
+    <div id="output"></div>
+    <script>
+        let input=document.getElementById("input");
+        let btn=document.getElementById("btn");
+        let reverse=document.getElementById("reverse");
+        let reverseword=document.getElementById("reverseword");
+        let output  = document.getElementById("output");
+
+        btn.addEventListener("click", ()=>{
+            let inputValue=input.value;
+            let res=capitalize(inputValue);
+            output.innerHTML=`<h2>${res}</h2>`;
+        });
+
+        reverse.addEventListener("click",()=>{
+            let inputValue=input.value;
+            let res=reverseString(inputValue);
+            output.innerHTML=`<h2>${res}</h2>`;
+        })
+
+        reverseword.addEventListener("click",()=>{
+            let inputValue=input.value;
+            let res= reversePrint(inputValue);
+            output.innerHTML=`<h2>${res}</h2>`
+        })
+
+        function capitalize(s){
+        let s1=s[0].toUpperCase()
+        let s2="";
+        for (let i=1; i<s.length; i++){
+                if (s[i-1]=="," || s[i-1]==" "){
+                    s2=s2+s[i].toUpperCase()
+                }
+            else{
+                s2=s2+s[i];
+            }
+        }
+        return s1+s2;
+        }
+        
+
+        function reverseString(str){
+        let s3=str.split("")
+        s3.reverse();
+        
+        return s3.join("");
+        }
+
+        function reversePrint(str1){
+        return str1.split(" ").reverse().join(" ")
+        
+        }
+        // console.log(reverseString(s));
+
+        
+    </script>
+</body>
+</html>
